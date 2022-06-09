@@ -1,10 +1,10 @@
 #! /usr/bin/awk -f
 BEGIN {
     FS = ","
-    OFS = "---"
+    OFS = " --- "
 }
 {
-    if($4  ~ /spring/)
+    if($0  ~ /spring/)
         print$2, $3, $4
 
 }

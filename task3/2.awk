@@ -1,13 +1,13 @@
 #! /usr/bin/awk -f
 BEGIN {
     FS = ","
-    OFS = "---"
-
+    OFS = " --- "
+    counter=0
 }
 {
 
     if($0 ~ /fun|fan/){
-        conter++
+        counter++
     }
 }
 END { printf "Number of poems %d \n", counter }
