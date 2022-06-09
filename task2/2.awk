@@ -1,23 +1,15 @@
-
+#! /usr/bin/awk -f
 BEGIN {
-    FS = ","
-        mathtotal =0
-        readingtotal =0
-        writingtotal =0
-        counter = 0
+        counter =0
+        FS = ","
 }
 {
-        if($4  ~ /standard/){
-            counter++
-            mathtotal += $6
-            readingtotal += $7
-            writingtotal += $8
-
+        if($3 ~ /bachelor/){
+                counter++
         }
 }
-END {
-    print "Math: " mathtotal/counter "\t"  "Reading: " readingtotal/counter "\t" "Writing: " writingtotal/counter
-}
+END { printf "The number of students whose there parents have bachelor's degree is %d \n", counter }
+
 
 
 

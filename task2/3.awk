@@ -1,18 +1,18 @@
+#! /usr/bin/awk -f
 BEGIN {
-        counter =0
         FS = ","
+        print "Success Student List"
+        counter = 0
 
 }
 {
 
-        if($3 ~ /bachelor/){
+        if($6 >= 80 && $7 >= "80" && $8 >= "80"){
+                print $0
                 counter++
         }
 }
-END{
-        print counter
-
-}
+END { printf "The number of students : %d \n", counter }
 
 
 
